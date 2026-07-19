@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="全染色体NIPT臨床研究 受診案内フライヤー（A4）｜兵庫医科大学病院 遺伝子医療部／産科婦人科。PGT-A・PGT-SRでモザイク胚を移植された方へ。" />
+<title>受診案内フライヤー（A4）｜全染色体NIPT臨床研究</title>
+<link rel="icon" type="image/png" href="H_5-3.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --teal-900:#114b4a; --teal-700:#1c7a75; --teal-500:#2ea19a; --teal-100:#dff1ef; --teal-50:#f0f8f7;
+    --coral:#ef8a72; --coral-soft:#fbe6df; --amber:#e2a23b; --amber-soft:#fbf0d9;
+    --ink:#2c3a3a; --ink-soft:#566262; --line:#e0e8e7;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:#e9edec; font-family:"Noto Sans JP",sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  h1,h2,h3,.zen{ font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif; }
+
+  /* screen toolbar (hidden on print) */
+  .toolbar{ position:sticky; top:0; display:flex; gap:12px; align-items:center; justify-content:center;
+    background:#fff; border-bottom:1px solid var(--line); padding:12px; z-index:10; }
+  .toolbar span{ font-size:13px; color:var(--ink-soft); }
+  .print-btn{ background:var(--teal-700); color:#fff; border:none; border-radius:999px; padding:10px 22px;
+    font-weight:700; font-size:14px; cursor:pointer; font-family:inherit; }
+  .print-btn:hover{ background:var(--teal-900); }
+
+  /* A4 page */
+  .page{
+    width:210mm; height:297mm; margin:16px auto; background:#fff; position:relative; overflow:hidden;
+    padding:11mm 11mm 9mm; box-shadow:0 6px 24px rgba(0,0,0,.18); display:flex; flex-direction:column;
+  }
+
+  /* header */
+  .fl-head{ display:flex; align-items:center; gap:12px; border-bottom:3px solid var(--teal-700); padding-bottom:7px; }
+  .fl-head img{ height:16mm; width:auto; }
+  .fl-head .org{ line-height:1.35; }
+  .fl-head .org .u{ font-family:"Zen Maru Gothic"; font-size:12.5pt; font-weight:700; color:var(--teal-900); }
+  .fl-head .org .d{ font-size:9.5pt; color:var(--ink-soft); font-weight:700; }
+  .fl-head .tag{ margin-left:auto; background:var(--teal-700); color:#fff; font-weight:700; font-size:9pt;
+    padding:5px 14px; border-radius:999px; white-space:nowrap; }
+
+  /* title */
+  .fl-title{ text-align:center; margin:8px 0 6px; }
+  .fl-title .k{ display:inline-block; background:var(--coral-soft); color:#c25a41; font-weight:700; font-size:9.5pt;
+    padding:3px 14px; border-radius:999px; margin-bottom:6px; }
+  .fl-title h1{ font-size:21pt; color:var(--teal-900); line-height:1.3; }
+  .fl-title h1 .ac{ color:var(--coral); }
+  .fl-title .sub{ font-size:10pt; color:var(--ink-soft); margin-top:5px; }
+
+  /* target hero band */
+  .target{ margin-top:8px; background:linear-gradient(120deg,var(--teal-50),#eef7f5);
+    border:1.5px solid var(--teal-100); border-radius:12px; padding:10px 16px; display:flex; align-items:center; gap:14px; }
+  .target .badge{ background:var(--coral); color:#fff; font-family:"Zen Maru Gothic"; font-weight:700; font-size:10pt;
+    padding:6px 12px; border-radius:10px; white-space:nowrap; text-align:center; line-height:1.3; }
+  .target .txt{ font-size:11pt; color:var(--teal-900); font-weight:700; line-height:1.5; }
+  .target .txt small{ display:block; font-weight:500; font-size:8.8pt; color:var(--ink-soft); margin-top:2px; }
+
+  /* body grid */
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:9px; flex:1; }
+  .box{ border:1px solid var(--line); border-radius:11px; padding:10px 13px; }
+  .box h2{ font-size:11.5pt; color:var(--teal-700); margin-bottom:6px; display:flex; align-items:center; gap:7px; }
+  .box h2 .ic{ width:20px; height:20px; border-radius:6px; background:var(--teal-100); display:grid; place-items:center; font-size:11pt; }
+  .box p, .box li{ font-size:9pt; line-height:1.6; color:var(--ink); }
+  .box .muted{ color:var(--ink-soft); }
+
+  ul.checks{ list-style:none; display:grid; gap:4px; }
+  ul.checks li{ padding-left:16px; position:relative; }
+  ul.checks li::before{ content:"✓"; position:absolute; left:0; color:var(--teal-500); font-weight:700; }
+  ul.checks li.main{ background:var(--amber-soft); border-radius:6px; padding:5px 8px 5px 22px; font-weight:700; color:#9a6a15; }
+  ul.checks li.main::before{ left:7px; color:var(--amber); }
+
+  /* flow steps */
+  ol.flow{ list-style:none; counter-reset:s; display:grid; gap:5px; }
+  ol.flow li{ counter-increment:s; position:relative; padding-left:24px; font-size:9pt; line-height:1.5; }
+  ol.flow li::before{ content:counter(s); position:absolute; left:0; top:0; width:17px; height:17px; border-radius:50%;
+    background:var(--teal-700); color:#fff; font-family:"Zen Maru Gothic"; font-size:8.5pt; font-weight:700; display:grid; place-items:center; }
+
+  /* cost */
+  .cost-row{ display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px dashed var(--line); padding:3px 0; font-size:9pt; }
+  .cost-row b{ font-family:"Zen Maru Gothic"; color:var(--teal-900); white-space:nowrap; }
+  .cost-row.free b{ color:var(--teal-500); }
+  .cost-note{ font-size:7.6pt; color:var(--ink-soft); margin-top:5px; line-height:1.5; }
+
+  /* 受診時のお願い */
+  .ask{ margin-top:8px; background:var(--amber-soft); border:1.5px solid #eccf8f; border-radius:10px;
+    padding:8px 13px; display:flex; align-items:center; gap:9px; }
+  .ask .ai{ font-size:13pt; }
+  .ask span{ font-size:9pt; line-height:1.5; color:#7a5510; }
+  .ask b{ color:#9a6a15; }
+
+  /* footer contact + QR */
+  .foot{ margin-top:8px; border:1.5px solid var(--teal-700); border-radius:12px; padding:11px 14px;
+    display:grid; grid-template-columns:1fr 34mm; gap:14px; align-items:center; background:var(--teal-50); }
+  .foot .c-title{ font-size:9pt; color:var(--teal-700); font-weight:700; }
+  .foot .c-org{ font-family:"Zen Maru Gothic"; font-size:12.5pt; font-weight:700; color:var(--teal-900); margin:1px 0 4px; }
+  .foot .c-tel{ font-family:"Zen Maru Gothic"; font-size:18pt; font-weight:700; color:var(--teal-900); letter-spacing:.5px; }
+  .foot .c-tel .ti{ font-size:12pt; }
+  .foot .c-sub{ font-size:8pt; color:var(--ink-soft); margin-top:3px; line-height:1.5; }
+  .foot .c-sub b{ color:var(--teal-700); }
+
+  .qr{ text-align:center; }
+  .qr .frame{ width:30mm; height:30mm; margin:0 auto; border:2px dashed var(--teal-500); border-radius:8px;
+    display:grid; place-items:center; background:#fff; color:var(--teal-500); font-size:7.5pt; text-align:center; line-height:1.4; padding:4px; }
+  .qr .cap{ font-size:7.5pt; color:var(--ink-soft); margin-top:4px; line-height:1.3; }
+  .qr .url{ font-size:7.5pt; color:var(--teal-700); font-weight:700; word-break:break-all; }
+
+  .disclaim{ text-align:center; font-size:7.4pt; color:var(--ink-soft); margin-top:7px; line-height:1.5; }
+
+  @media print{
+    body{ background:#fff; }
+    .toolbar{ display:none; }
+    .page{ margin:0; box-shadow:none; }
+  }
+  @page{ size:A4; margin:0; }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span>このページはA4印刷・PDF保存用です。右のボタンから印刷／PDF保存できます。</span>
+  <button class="print-btn" onclick="window.print()">🖨 印刷 / PDF保存</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="fl-head">
+    <img src="H_5-3.png" alt="兵庫医科大学病院" />
+    <div class="org">
+      <div class="u">兵庫医科大学病院</div>
+      <div class="d">遺伝子医療部／産科婦人科</div>
+    </div>
+    <div class="tag">多機関共同臨床研究</div>
+  </div>
+
+  <!-- TITLE -->
+  <div class="fl-title">
+    <span class="k">妊婦さん・ご家族へ</span>
+    <h1>おなかの赤ちゃんの染色体を、より広く調べる<br><span class="ac">全染色体を対象とするNIPT</span>のご案内</h1>
+    <div class="sub">母体血胎児全染色体領域ゲノム定量検査（本検査）に関する臨床研究　―　採血だけで、すべての染色体の数の変化などを調べます</div>
+  </div>
+
+  <!-- TARGET -->
+  <div class="target">
+    <div class="badge">主な対象<br>の方</div>
+    <div class="txt">
+      PGT-A・PGT-SR で<u>モザイク胚を移植して妊娠された方</u>
+      <small>そのほか、胎児超音波での形態異常、ご夫婦の染色体構造異常、染色体疾患児の出産既往などで、確定的検査（羊水・絨毛検査）の選択肢が提示される妊娠10週〜37週未満の方も対象です。</small>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- 対象 -->
+    <div class="box">
+      <h2><span class="ic">👪</span>対象となる方（すべて満たす方）</h2>
+      <ul class="checks">
+        <li class="main">PGT-A／PGT-SR でモザイク胚を移植して妊娠が成立した方</li>
+        <li>胎児超音波検査で一つ以上の形態異常を認める場合</li>
+        <li>ご夫婦のいずれかに染色体構造異常（均衡型転座など）がある場合</li>
+        <li>染色体疾患のお子さんの出産既往がある場合</li>
+        <li>妊娠10週以降37週未満／同意時18歳以上のご夫婦</li>
+        <li>検査前後の遺伝カウンセリングを受けられる方</li>
+      </ul>
+    </div>
+
+    <!-- わかること -->
+    <div class="box">
+      <h2><span class="ic">🔎</span>本検査でわかること</h2>
+      <ul class="checks">
+        <li>すべての染色体の<b>数の変化</b></li>
+        <li>一部の染色体の<b>欠失・重複</b>（G分染法と同程度のサイズ）</li>
+      </ul>
+      <p class="cost-note" style="margin-top:6px;">
+        ※遺伝子の変化による疾患や、ごく小さな欠失・重複は検出できません。<b>PGTのモザイクのタイプによっては検出できないこともあります。この全染色体NIPTで検査ができない場合は、確定診断検査をお勧めする場合があります。</b>性染色体はコピー数の変化があった場合のみお伝えします（性別は原則お伝えしません）。本検査は非確定的検査です。
+      </p>
+    </div>
+
+    <!-- 流れ -->
+    <div class="box">
+      <h2><span class="ic">🩸</span>検査の流れ</h2>
+      <ol class="flow">
+        <li>遺伝カウンセリング（検査前・お二人で）</li>
+        <li>採血（約10ml）を行い、検査会社で解析</li>
+        <li>約2週間後に結果説明（陰性／判定保留／陽性）</li>
+        <li>結果に応じて対応（陰性は通常の妊婦健診を継続）</li>
+      </ol>
+    </div>
+
+    <!-- 費用 -->
+    <div class="box">
+      <h2><span class="ic">💰</span>費用の目安（税別）</h2>
+      <div class="cost-row"><span>母体血胎児全染色体領域ゲノム定量検査料</span><b>165,800円</b></div>
+      <div class="cost-row"><span>初回遺伝カウンセリング料</span><b>3,700円</b></div>
+      <div class="cost-row free"><span>陽性・判定保留時の確定的検査・再検査料</span><b>自己負担なし</b></div>
+      <p class="cost-note">
+        ※ほかに初診料・結果説明の遺伝カウンセリング料・再診料等がかかります。確定的検査に伴う入院費は別途。<b>具体的な費用は受診当日の遺伝カウンセリング時（検査受検前）にご確認ください。</b>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- 受診時のお願い -->
+  <div class="ask">
+    <span class="ai">📄</span>
+    <span><b>受診の際のお願い：</b>移植したモザイク胚の <b>PGTの結果がわかる報告書</b>などをお持ちください。または、紹介状にご同封いただくようご依頼ください。</span>
+  </div>
+
+  <!-- FOOTER: CONTACT + QR -->
+  <div class="foot">
+    <div>
+      <div class="c-title">受診・お問い合わせ先</div>
+      <div class="c-org">兵庫医科大学病院　遺伝子医療部</div>
+      <div class="c-tel"><span class="ti">☎</span> 0798-45-6347</div>
+      <div class="c-sub">
+        お電話の際は「<b>全染色体NIPT臨床研究について</b>」とお伝えください。<br>
+        受診方法・費用・医療機関からのご紹介 → <b>www.prenatal-diagnosis.org</b>（「受診の方法と費用」「医療機関の皆様」）
+      </div>
+    </div>
+    <div class="qr">
+      <div class="frame">QRコード<br>（正式公開後に掲載）</div>
+      <div class="cap">研究の詳しいご案内サイト</div>
+      <div class="url">［公開URLは確定後に掲載］</div>
+    </div>
+  </div>
+
+  <div class="disclaim">
+    本研究は、こども家庭庁作成のスキームに沿って日本人類遺伝学会・日本産科婦人科学会・日本小児科学会の意見書を反映し、東京慈恵会医科大学の倫理委員会での審査を経て承認され、兵庫医科大学での実施許可を得て実施されています。／研究概要 第1版 2026年4月
+  </div>
+
+</div>
+
+</body>
+</html>
