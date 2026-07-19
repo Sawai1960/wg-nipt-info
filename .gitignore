@@ -1,0 +1,10 @@
+# 研究資料の元データ（サイトから直接リンクしていない元PDF）
+01_perinataldi-maternal-and-child-mecine.pdf
+02_perinatal-maternal-and-child-medicine.pdf
+03_perinatal-maternal-and-child-medicine.pdf
+
+# OS / エディタの生成物
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
