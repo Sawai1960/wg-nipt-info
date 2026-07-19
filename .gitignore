@@ -3,6 +3,11 @@
 02_perinatal-maternal-and-child-medicine.pdf
 03_perinatal-maternal-and-child-medicine.pdf
 
+# 作業用ファイル（公開リポジトリには含めない。OneDriveでのみ同期）
+handoff_*.md
+build_flyer_docx.py
+*.docx
+
 # OS / エディタの生成物
 Thumbs.db
 Desktop.ini
