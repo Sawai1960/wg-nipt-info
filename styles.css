@@ -222,7 +222,8 @@ a.home-card .hc-more { margin-top: 14px; font-size: 13px; font-weight: 700; colo
 .tag-amber { background: var(--amber-soft); color: #a9761f; }
 
 .result-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 8px; }
-.result-box { border-radius: var(--radius-sm); padding: 20px; text-align: center; }
+.result-box { border-radius: var(--radius-sm); padding: 20px; text-align: left; }
+.result-box .r-title { text-align: center; }
 .result-box .r-title { font-family: "Zen Maru Gothic"; font-size: 20px; font-weight: 700; margin-bottom: 8px;}
 .result-box p { font-size: 13.5px; }
 .r-neg { background: var(--teal-50); border: 1px solid var(--teal-100);} .r-neg .r-title{color: var(--teal-700);}
