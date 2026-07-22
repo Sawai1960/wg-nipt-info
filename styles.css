@@ -229,11 +229,14 @@ a.home-card .hc-more { margin-top: 14px; font-size: 13px; font-weight: 700; colo
 .r-hold{ background: var(--amber-soft); border: 1px solid #f0dcb0;} .r-hold .r-title{color:#a9761f;}
 .r-pos { background: var(--coral-soft); border: 1px solid #f5cfc4;} .r-pos .r-title{color:#c25a41;}
 .result-box p { color: var(--ink-soft); }
-.r-after { margin-top: 12px; padding-top: 12px; border-top: 1px dashed rgba(0,0,0,.15); text-align: left; }
-.r-after-label { font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--teal-700); }
-.r-hold .r-after-label { color: #a9761f; }
-.r-pos .r-after-label { color: #c25a41; }
-.r-after p { font-size: 13px; line-height: 1.7; }
+.arrow-row { margin: 2px 0 0; }
+.r-arrow { text-align: center; font-size: 30px; line-height: 1; font-weight: 700; }
+.ar-neg { color: var(--teal-500); }
+.ar-hold { color: #d9a93f; }
+.ar-pos { color: #e58a70; }
+.result-box.r-detail { text-align: left; }
+.result-box.r-detail .r-title { text-align: center; }
+.result-box.r-detail p { font-size: 13px; line-height: 1.75; }
 
 /* know */
 .know-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -377,6 +380,7 @@ footer .ethics { background: rgba(255,255,255,.06); border-radius: var(--radius-
   .hero-grid, .about-grid, .elig-grid, .know-grid, .foot-grid { grid-template-columns: 1fr; }
   .home-cards { grid-template-columns: 1fr; }
   .result-grid { grid-template-columns: 1fr; }
+  .arrow-row { display: none; }
   .cost-highlight { grid-template-columns: 1fr; }
   .cost-table thead { display: none; }
   .cost-table, .cost-table tbody, .cost-table tr, .cost-table td { display: block; width: 100%; }
